@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="id" class="dark">
+<!DOCTYPE html><html lang="id" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,17 +12,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-950 text-white dark:bg-white dark:text-black font-sans transition-colors duration-300">
-
-  <header class="text-center py-16 px-4 fade-in">
+<body class="bg-gray-950 text-white dark:bg-white dark:text-black font-sans transition-colors duration-300">  <header class="text-center py-16 px-4 fade-in">
     <button id="toggleMode" class="absolute top-4 right-4 text-2xl p-2 rounded-full hover:scale-110 transition" aria-label="Toggle Theme">
       <span id="themeIcon">🌙</span>
     </button>
-    <img src="https://files.catbox.moe/wk9dse.jpg" alt="Raihan Mirzayani" class="mx-auto w-32 h-32 rounded-full border-4 border-blue-500 shadow-md hover:scale-105 hover:ring-4 hover:ring-blue-400 transition duration-300">
+    <img src="https://files.catbox.moe/wk9dse.jpg" alt="Raihan Mirzayani" class="mx-auto w-32 h-32 rounded-full border-4 border-blue-500 shadow-md ring-offset-2 ring-4 ring-blue-500 hover:scale-105 hover:shadow-[0_0_20px_4px_#00f6ff,inset_0_0_10px_#00f6ff] dark:hover:shadow-[0_0_20px_4px_#38bdf8,inset_0_0_10px_#38bdf8] transition duration-500 ease-in-out">
     <h1 class="text-4xl font-bold mt-4">Raihan Mirzayani</h1>
     <p class="text-blue-400 dark:text-blue-600 text-lg mt-2">Prompt Engineer</p>
     <p class="max-w-xl mx-auto text-gray-300 dark:text-gray-700 mt-4">
-      Saya adalah seorang Prompt Engineer dan Digital Creator dengan pengalaman di bidang prompt AI, digital marketing, dan penjualan online. Teliti, cepat beradaptasi, dan senang menghadapi tantangan, saya terus berkembang untuk menjadi ahli di bidang yang saya tekuni.
+      Saya adalah seorang pemula bukan karena saya tidak tahu, tetapi karena saya sedang belajar memahami. Saya mungkin belum sampai, tapi saya tahu ke mana saya menuju. Setiap langkah kecil yang saya ambil adalah bagian dari perjalanan panjang menuju penguasaan. Saya percaya, apa yang dulu dianggap mustahil hanyalah ide yang datang terlalu cepat. Dan seperti teknologi hebat yang lahir dari mimpi, saya juga sedang membangun kenyataan saya satu bidang, satu proses, satu hari dalam satu waktu.
     </p>
     <div class="flex justify-center space-x-6 mt-6">
       <a href="https://github.com/Rey12p7eu" target="_blank">
@@ -39,22 +36,10 @@
         <i class="fab fa-whatsapp text-2xl hover:text-green-400 hover:scale-110 transition"></i>
       </a>
     </div>
-  </header>
-
-  <section class="max-w-3xl mx-auto px-4 py-12 fade-in">
+  </header>  <section class="max-w-3xl mx-auto px-4 py-12 fade-in">
     <h2 class="text-2xl font-semibold text-blue-400 dark:text-blue-600 mb-4">Tentang Saya</h2>
-    <p class="text-gray-300 dark:text-gray-700">
-      Nama saya Raihan Mirzayani, biasa dipanggil Mirza. Saya memiliki pengalaman lebih dari 2 tahun di dunia Prompt Engineering, 4 tahun di bidang penjualan dan pemasaran online, serta mulai mendalami dunia digital painting dalam setengah tahun terakhir.
-    </p>
-    <p class="text-gray-300 dark:text-gray-700 mt-4">
-      Saya memiliki keahlian tingkat lanjut dalam membuat prompt yang efektif untuk berbagai jenis AI, serta cukup berpengalaman dalam strategi marketing digital, khususnya dalam konteks penjualan daring. Selain itu, saya juga aktif dalam dunia gim, khususnya Mobile Legends: Bang Bang, dengan tingkat penguasaan yang tinggi.
-    </p>
-    <p class="text-gray-300 dark:text-gray-700 mt-4">
-      Saya dikenal sebagai pribadi yang teliti, cepat beradaptasi, dan senang mencoba tantangan baru. Tujuan utama saya adalah menjadi ahli di berbagai bidang yang saya tekuni, dengan semangat belajar dan eksplorasi yang terus menyala.
-    </p>
-  </section>
-
-  <section class="bg-gray-900 dark:bg-gray-200 py-12 px-4 fade-in">
+    <div id="typingText" class="text-gray-300 dark:text-gray-700 whitespace-pre-line"></div>
+  </section>  <section class="bg-gray-900 dark:bg-gray-200 py-12 px-4 fade-in">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-2xl font-semibold text-blue-400 dark:text-blue-600 mb-6">Tools yang Saya Kuasai</h2>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center text-gray-300 dark:text-gray-800">
@@ -64,9 +49,7 @@
         <div>VSCode</div>
       </div>
     </div>
-  </section>
-
-  <section class="max-w-4xl mx-auto px-4 py-12 fade-in">
+  </section>  <section class="max-w-4xl mx-auto px-4 py-12 fade-in">
     <h2 class="text-2xl font-semibold text-blue-400 dark:text-blue-600 mb-6">Proyek</h2>
     <div class="bg-gray-800 dark:bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition">
       <img src="https://i.ibb.co/9PHjNJ0" class="w-full rounded-lg mb-4" alt="Bot WhatsApp">
@@ -76,12 +59,27 @@
       </p>
       <p class="text-sm text-gray-500 mt-2">Teknologi: JavaScript</p>
     </div>
-  </section>
-
-  <footer class="text-center text-gray-500 dark:text-gray-600 text-sm py-6 border-t border-gray-800 dark:border-gray-300">
+  </section>  <footer class="text-center text-gray-500 dark:text-gray-600 text-sm py-6 border-t border-gray-800 dark:border-gray-300">
     &copy; 2025 Raihan Mirzayani. Dibuat dengan semangat dan Tailwind CSS.
-  </footer>
+  </footer>  <script>
+    const text = `Nama saya Raihan Mirzayani, tapi banyak orang memanggil saya Mirza. Saya lahir pada 22 September 2007 — di tengah dunia yang terus bergerak cepat, saya justru tumbuh dengan kecenderungan untuk memperlambat langkah, bukan karena tertinggal, tapi karena ingin benar-benar memahami ke mana arah hidup ini membawa saya.
 
-  <script src="script.js"></script>
-</body>
+Saya senang membaca. Bagi saya, buku bukan sekadar hiburan, melainkan ruang sunyi tempat saya berdialog dengan pikiran orang lain. Setiap halaman membawa saya pada dunia baru, setiap kalimat menawarkan pemahaman yang tidak selalu saya temukan dalam percakapan sehari-hari. Membaca membuat saya lebih dekat pada diri sendiri, dan pada kenyataan yang sering kali luput saya sadari.
+
+Saat ini, saya masih berada di tahap awal dalam banyak hal. Saya adalah seorang pemula — tapi bukan tanpa arah. Ada banyak bidang yang saya pelajari, dengan niat bukan sekadar untuk tahu, tapi untuk menguasai, perlahan namun pasti. Bagi saya, proses jauh lebih penting daripada hasil. Karena penguasaan sejati tidak lahir dari ambisi semata, melainkan dari kesabaran, ketekunan, dan kerendahan hati untuk terus belajar.
+
+Saya tidak pernah takut bermimpi besar, walaupun saya sadar, banyak orang akan menyebutnya khayalan. Tapi bukankah semua pencapaian besar manusia — dari listrik, pesawat, hingga kecerdasan buatan — dulu juga dianggap mustahil? Maka saya tidak malu untuk bermimpi, karena saya tahu, mimpi yang diperjuangkan dengan kesadaran akan perlahan menjelma menjadi kenyataan.
+
+Saya bukan siapa-siapa. Tapi saya sedang menuju ke arah itu — dengan kesungguhan, dengan keyakinan, dan dengan cinta terhadap proses yang tak selalu mudah, tapi selalu bermakna.`;
+
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typingText").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 18);
+      }
+    }
+    typeWriter();
+  </script>  <script src="script.js"></script></body>
 </html>
