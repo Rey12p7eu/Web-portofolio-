@@ -1,3 +1,7 @@
 document.getElementById('toggleMode').addEventListener('click', () => {
-  document.documentElement.classList.toggle('dark');
+  const root = document.documentElement;
+  const icon = document.getElementById('themeIcon');
+
+  const isDark = root.classList.toggle('dark');
+  icon.textContent = isDark ? '🌙' : '☀️';
 });
