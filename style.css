@@ -25,3 +25,19 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+
+.icon-glow {
+  transition: all 0.3s ease;
+}
+
+.icon-glow:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px #ffd700) drop-shadow(0 0 20px #ffd700);
+  animation: pulseGlow 1s infinite;
+}
+
+@keyframes pulseGlow {
+  0% { filter: drop-shadow(0 0 8px #ffd700); }
+  50% { filter: drop-shadow(0 0 16px #ffdd33); }
+  100% { filter: drop-shadow(0 0 8px #ffd700); }
+}
