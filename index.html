@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Raihan Mirzayani - Prompt Engineer</title>
+  <title>Raihan Mirzayani - Penjelajah Dunia Sihir</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -11,52 +11,60 @@
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'MedievalSharp', cursive;
+    }
+  </style>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-950 text-white dark:bg-white dark:text-black font-sans transition-colors duration-300">  <header class="text-center py-16 px-4 fade-in">
-    <button id="toggleMode" class="absolute top-4 right-4 text-2xl p-2 rounded-full hover:scale-110 transition" aria-label="Toggle Theme">
+<body class="bg-gradient-to-b from-indigo-950 via-purple-900 to-indigo-950 text-white dark:bg-white dark:text-black font-sans transition-colors duration-300 bg-fixed bg-cover" style="background-image: url('https://images.unsplash.com/photo-1616129476340-cd3c0a47b9d3?auto=format&fit=crop&w=1950&q=80');">  <header class="text-center py-16 px-4 fade-in">
+    <button id="toggleMode" class="absolute top-4 right-4 text-2xl p-2 rounded-full hover:scale-110 transition bg-black/30 dark:bg-white/20 backdrop-blur-sm" aria-label="Toggle Theme">
       <span id="themeIcon">🌙</span>
     </button>
-    <img src="https://files.catbox.moe/wk9dse.jpg" alt="Raihan Mirzayani" class="mx-auto w-32 h-32 rounded-full border-4 border-blue-500 shadow-md ring-offset-2 ring-4 ring-blue-500 hover:scale-105 hover:shadow-[0_0_20px_4px_#00f6ff,inset_0_0_10px_#00f6ff] dark:hover:shadow-[0_0_20px_4px_#38bdf8,inset_0_0_10px_#38bdf8] transition duration-500 ease-in-out">
+    <img src="https://files.catbox.moe/wk9dse.jpg" alt="Raihan Mirzayani" class="mx-auto w-32 h-32 rounded-full border-4 border-yellow-400 shadow-xl ring-offset-2 ring-4 ring-yellow-300 hover:scale-105 hover:shadow-[0_0_20px_4px_gold,inset_0_0_10px_gold] dark:hover:shadow-[0_0_20px_4px_#facc15,inset_0_0_10px_#facc15] transition duration-500 ease-in-out">
     <h1 class="text-4xl font-bold mt-4">Raihan Mirzayani</h1>
-    <p class="text-blue-400 dark:text-blue-600 text-lg mt-2">Prompt Engineer</p>
-    <p class="max-w-xl mx-auto text-gray-300 dark:text-gray-700 mt-4">
+    <p class="text-yellow-400 dark:text-yellow-600 text-lg mt-2">Penjelajah Dunia Sihir</p>
+    <p class="max-w-xl mx-auto text-yellow-200 dark:text-yellow-800 mt-4 italic">
       Saya adalah seorang pemula bukan karena saya tidak tahu, tetapi karena saya sedang belajar memahami. Saya mungkin belum sampai, tapi saya tahu ke mana saya menuju. Setiap langkah kecil yang saya ambil adalah bagian dari perjalanan panjang menuju penguasaan. Saya percaya, apa yang dulu dianggap mustahil hanyalah ide yang datang terlalu cepat. Dan seperti teknologi hebat yang lahir dari mimpi, saya juga sedang membangun kenyataan saya satu bidang, satu proses, satu hari dalam satu waktu.
     </p>
     <div class="flex justify-center space-x-6 mt-6">
       <a href="https://github.com/Rey12p7eu" target="_blank">
-        <i class="fab fa-github text-2xl hover:text-blue-400 hover:scale-110 transition"></i>
+        <i class="fab fa-github text-2xl text-yellow-300 hover:text-yellow-500 hover:scale-110 transition"></i>
       </a>
       <a href="https://instagram.com/raihan_m.y" target="_blank">
-        <i class="fab fa-instagram text-2xl hover:text-pink-400 hover:scale-110 transition"></i>
+        <i class="fab fa-instagram text-2xl text-yellow-300 hover:text-pink-400 hover:scale-110 transition"></i>
       </a>
       <a href="mailto:raihanmirzayani@gmail.com">
-        <i class="fas fa-envelope text-2xl hover:text-red-400 hover:scale-110 transition"></i>
+        <i class="fas fa-envelope text-2xl text-yellow-300 hover:text-red-400 hover:scale-110 transition"></i>
       </a>
       <a href="https://wa.me/62887449036602" target="_blank">
-        <i class="fab fa-whatsapp text-2xl hover:text-green-400 hover:scale-110 transition"></i>
+        <i class="fab fa-whatsapp text-2xl text-yellow-300 hover:text-green-400 hover:scale-110 transition"></i>
       </a>
     </div>
   </header>  <section class="max-w-3xl mx-auto px-4 py-12 fade-in">
-    <h2 class="text-2xl font-semibold text-blue-400 dark:text-blue-600 mb-4">Tentang Saya</h2>
-    <p class="text-gray-300 dark:text-gray-700 mt-4 paragraph-to-reveal">
-      Nama saya Raihan Mirzayani, tapi banyak orang memanggil saya Mirza. Saya lahir pada 22 September 2007. Di tengah dunia yang terus bergerak cepat, saya justru tumbuh dengan kecenderungan untuk memperlambat langkah, bukan karena tertinggal, tapi karena ingin benar-benar memahami ke mana arah hidup ini membawa saya.
+    <h2 class="text-3xl font-semibold text-yellow-400 dark:text-yellow-600 mb-4 border-b-2 border-yellow-300 pb-2">Tentang Saya</h2>
+    <p class="text-yellow-200 dark:text-yellow-800 mt-4 paragraph-to-reveal">
+      Nama saya Raihan Mirzayani, tapi banyak orang memanggil saya Mirza. Saya lahir pada 22 September 2007 di tengah dunia yang terus bergerak cepat, saya justru tumbuh dengan kecenderungan untuk memperlambat langkah, bukan karena tertinggal, tapi karena ingin benar-benar memahami ke mana arah hidup ini membawa saya.
     </p>
-    <p class="text-gray-300 dark:text-gray-700 mt-4 paragraph-to-reveal">
+    <p class="text-yellow-200 dark:text-yellow-800 mt-4 paragraph-to-reveal">
       Saya senang membaca. Bagi saya, buku bukan sekadar hiburan, melainkan ruang sunyi tempat saya berdialog dengan pikiran orang lain. Setiap halaman membawa saya pada dunia baru, setiap kalimat menawarkan pemahaman yang tidak selalu saya temukan dalam percakapan sehari-hari. Membaca membuat saya lebih dekat pada diri sendiri, dan pada kenyataan yang sering kali luput saya sadari.
     </p>
-    <p class="text-gray-300 dark:text-gray-700 mt-4 paragraph-to-reveal">
+    <p class="text-yellow-200 dark:text-yellow-800 mt-4 paragraph-to-reveal">
       Saat ini, saya masih berada di tahap awal dalam banyak hal. Saya adalah seorang pemula tapi bukan tanpa arah. Ada banyak bidang yang saya pelajari, dengan niat bukan sekadar untuk tahu, tapi untuk menguasai, perlahan namun pasti. Bagi saya, proses jauh lebih penting daripada hasil. Karena penguasaan sejati tidak lahir dari ambisi semata, melainkan dari kesabaran, ketekunan, dan kerendahan hati untuk terus belajar.
     </p>
-    <p class="text-gray-300 dark:text-gray-700 mt-4 paragraph-to-reveal">
+    <p class="text-yellow-200 dark:text-yellow-800 mt-4 paragraph-to-reveal">
       Saya tidak pernah takut bermimpi besar, walaupun saya sadar, banyak orang akan menyebutnya khayalan. Tapi bukankah semua pencapaian besar manusia dari listrik, pesawat, hingga kecerdasan buatan dulu juga dianggap mustahil? Maka saya tidak malu untuk bermimpi, karena saya tahu, mimpi yang diperjuangkan dengan kesadaran akan perlahan menjelma menjadi kenyataan.
     </p>
-    <p class="text-gray-300 dark:text-gray-700 mt-4 paragraph-to-reveal">
+    <p class="text-yellow-200 dark:text-yellow-800 mt-4 paragraph-to-reveal">
       Saya bukan siapa-siapa. Tapi saya sedang menuju ke arah itu dengan kesungguhan, dengan keyakinan, dan dengan cinta terhadap proses yang tak selalu mudah, tapi selalu bermakna.
     </p>
-  </section>  <section class="bg-gray-900 dark:bg-gray-200 py-12 px-4 fade-in">
+  </section>  <section class="bg-yellow-100 dark:bg-yellow-50 py-12 px-4 fade-in text-black">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-semibold text-blue-400 dark:text-blue-600 mb-6">Tools yang Saya Kuasai</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center text-gray-300 dark:text-gray-800">
+      <h2 class="text-3xl font-semibold text-yellow-700 mb-6">Artefak Sihir yang Dikuasai</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
         <div>ChatGPT</div>
         <div>Notion</div>
         <div>Figma</div>
@@ -64,16 +72,49 @@
       </div>
     </div>
   </section>  <section class="max-w-4xl mx-auto px-4 py-12 fade-in">
-    <h2 class="text-2xl font-semibold text-blue-400 dark:text-blue-600 mb-6">Proyek</h2>
-    <div class="bg-gray-800 dark:bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+    <h2 class="text-3xl font-semibold text-yellow-400 dark:text-yellow-600 mb-6">Proyek Ajaib</h2>
+    <div class="bg-yellow-100 dark:bg-yellow-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition text-black">
       <img src="https://i.ibb.co/9PHjNJ0" class="w-full rounded-lg mb-4" alt="Bot WhatsApp">
       <h3 class="text-xl font-bold">Bot WhatsApp</h3>
-      <p class="text-gray-400 dark:text-gray-700 mt-2">
+      <p class="text-yellow-800 mt-2">
         Saya membangun WhatsApp Bot dengan integrasi otomatisasi berbasis API WhatsApp yang memungkinkan pengiriman dan respons pesan secara real-time. Yang memiliki lebih dari 200 fitur seperti download, edit, promosi, dan masih banyak lagi.
       </p>
-      <p class="text-sm text-gray-500 mt-2">Teknologi: JavaScript</p>
+      <p class="text-sm text-yellow-600 mt-2">Teknologi: JavaScript</p>
     </div>
-  </section>  <footer class="text-center text-gray-500 dark:text-gray-600 text-sm py-6 border-t border-gray-800 dark:border-gray-300">
-    &copy; 2025 Raihan Mirzayani. Dibuat dengan semangat dan Tailwind CSS.
-  </footer>  <script src="script.js"></script></body>
+  </section>  <footer class="text-center text-yellow-300 dark:text-yellow-600 text-sm py-6 border-t border-yellow-500 dark:border-yellow-600 bg-black/30 dark:bg-yellow-100">
+    &copy; 2025 Raihan Mirzayani. Dibuat dengan mantra Tailwind CSS dan sihir tekad.
+  </footer>  <script src="script.js"></script>  <div id="particles-js" class="fixed inset-0 -z-10"></div>
+  <audio id="bg-music" autoplay loop hidden>
+    <source src="https://files.catbox.moe/jmpa8m.mp3" type="audio/mpeg">
+  </audio>
+  <button id="toggleMusic" class="fixed bottom-4 right-4 bg-yellow-400 text-black px-4 py-2 rounded-full shadow hover:shadow-lg transition z-50">🔊</button>  <script>
+    tsParticles.load("particles-js", {
+      fullScreen: { enable: false },
+      background: { color: "transparent" },
+      particles: {
+        number: { value: 60 },
+        color: { value: "#00f6ff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        move: { enable: true, speed: 1, direction: "none", outModes: "out" },
+        links: { enable: true, distance: 100, color: "#00f6ff", opacity: 0.3, width: 1 }
+      },
+      interactivity: {
+        events: { onHover: { enable: true, mode: "repulse" }, resize: true },
+        modes: { repulse: { distance: 100 } }
+      },
+      detectRetina: true
+    });
+
+    const music = document.getElementById("bg-music");
+    const musicBtn = document.getElementById("toggleMusic");
+    let isPlaying = true;
+
+    musicBtn.addEventListener("click", () => {
+      isPlaying = !isPlaying;
+      music[isPlaying ? "play" : "pause"]();
+      musicBtn.textContent = isPlaying ? "🔊" : "🔈";
+    });
+  </script></body>
 </html>
