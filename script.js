@@ -108,3 +108,122 @@
   if(media.matches){ $('#particles')?.remove(); }
 
 })();
+
+
+/* === Theme + Language + Nature Music === */
+(function(){
+  const $ = (s, c=document)=>c.querySelector(s);
+  const $$ = (s, c=document)=>Array.from(c.querySelectorAll(s));
+
+  // --- Theme (dark/light) ---
+  const html = document.documentElement;
+  function applyTheme(t){
+    if(t==='light'){ html.classList.remove('dark'); html.classList.add('light'); }
+    else { html.classList.add('dark'); html.classList.remove('light'); }
+    localStorage.setItem('aurora:theme', t);
+    const icon = $('#themeIcon');
+    if(icon){ icon.textContent = t==='light' ? 'ðŸŒž' : 'ðŸŒ™'; }
+  }
+  const savedTheme = localStorage.getItem('aurora:theme') || 'dark';
+  applyTheme(savedTheme);
+  $('#themeToggle')?.addEventListener('click', ()=>{
+    const t = html.classList.contains('dark') ? 'light' : 'dark';
+    applyTheme(t);
+  });
+
+  // --- Language (ID/EN) ---
+  const dict = {
+    id: {
+      name: "Raihan Mirzayani",
+      role: "Prompt Engineer & Kreator Digital",
+      heroDesc: "Saya membangun solusi AI & automasi yang rapi, cepat, dan relevan â€” fokus pada Prompt Engineering, eksperimen kreatif, dan strategi digital yang berdampak.",
+      ctaProjects: "Lihat Proyek",
+      ctaContact: "Kontak",
+      aboutTitle: "Tentang",
+      aboutBody: "Saya pemula di banyak hal, namun berjalan mantap untuk menguasainya. Dengan disiplin, rasa ingin tahu, dan keberanian bereksperimen, saya merancang sistem yang membantu orang bekerja lebih cerdas.",
+      toolsTitle: "Peralatan",
+      projectsTitle: "Proyek Unggulan",
+      contactTitle: "Kontak",
+      footer: "Â© 2025 Raihan Mirzayani â€” Portofolio",
+      music: "Musik Alam",
+      langLabel: "ID",
+      navHome:"Beranda", navAbout:"Tentang", navProjects:"Proyek", navContact:"Kontak"
+    },
+    en: {
+      name: "Raihan Mirzayani",
+      role: "Prompt Engineer & Digital Creator",
+      heroDesc: "I build tidy, fast, and relevant AI & automation solutions â€” focusing on Prompt Engineering, creative experiments, and impactful digital strategy.",
+      ctaProjects: "View Projects",
+      ctaContact: "Contact",
+      aboutTitle: "About",
+      aboutBody: "I'm a beginner in many things, steadily moving toward mastery. With discipline, curiosity, and bold experimentation, I design systems that help people work smarter.",
+      toolsTitle: "Tools",
+      projectsTitle: "Featured Projects",
+      contactTitle: "Contact",
+      footer: "Â© 2025 Raihan Mirzayani â€” Portfolio",
+      music: "Nature Music",
+      langLabel: "EN",
+      navHome:"Home", navAbout:"About", navProjects:"Projects", navContact:"Contact"
+    }
+  };
+  function applyLang(lang){
+    const d = dict[lang] || dict.id;
+    $$('[data-i18n]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      if(d[key]) el.textContent = d[key];
+    });
+    localStorage.setItem('aurora:lang', lang);
+    const btn = $('#langLabel');
+    if(btn) btn.textContent = d.langLabel;
+    // compass labels
+    const links = $$('.compass-wrap .compass-link');
+    if(links.length === 4){
+      links[0].textContent = d.navHome;
+      links[1].textContent = d.navAbout;
+      links[2].textContent = d.navProjects;
+      links[3].textContent = d.navContact;
+    }
+  }
+  const savedLang = localStorage.getItem('aurora:lang') || 'id';
+  applyLang(savedLang);
+  $('#langToggle')?.addEventListener('click', ()=>{
+    const next = (localStorage.getItem('aurora:lang') || 'id') === 'id' ? 'en' : 'id';
+    applyLang(next);
+  });
+
+  // --- Music (nature) ---
+  (function initMusic(){
+    let btn = $('#musicToggle');
+    if(!btn){
+      btn = document.createElement('button');
+      btn.id = 'musicToggle';
+      btn.className = 'toolbtn';
+      btn.innerHTML = 'ðŸŽµ <span class="label" data-i18n="music">Musik Alam</span>';
+      $('.toolbar')?.appendChild(btn);
+    }
+    let audio = $('#bgm');
+    if(!audio){
+      audio = document.createElement('audio');
+      audio.id = 'bgm';
+      audio.loop = true;
+      audio.preload = 'none';
+      // Provide your own track at /assets/nature.mp3 (or set audio.src here)
+      audio.src = 'assets/nature.mp3';
+      document.body.appendChild(audio);
+    }
+    const saved = localStorage.getItem('aurora:music') === 'on';
+    if(saved){ audio.play().catch(()=>{}); btn.setAttribute('aria-pressed','true'); }
+    btn.addEventListener('click', async ()=>{
+      const playing = !audio.paused;
+      if(playing){ audio.pause(); btn.removeAttribute('aria-pressed'); localStorage.setItem('aurora:music','off'); }
+      else {
+        try{ await audio.play(); btn.setAttribute('aria-pressed','true'); localStorage.setItem('aurora:music','on'); }
+        catch(e){ btn.classList.add('ring'); setTimeout(()=>btn.classList.remove('ring'),1200); }
+      }
+    });
+  })();
+
+})();  const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if(media.matches){ $('#particles')?.remove(); }
+
+})();
