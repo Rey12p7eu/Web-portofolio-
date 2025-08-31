@@ -383,3 +383,19 @@
   if(media.matches){ $('#particles')?.remove(); }
 
 })();
+
+// Manual music playback for initial user interaction
+const bgAudio = document.getElementById('bg-music');
+const musicBtn = document.getElementById('toggleMusic');
+if (bgAudio && musicBtn) {
+  let started = false;
+  musicBtn.addEventListener('click', async () => {
+    if (started) return;
+    try {
+      await bgAudio.play();
+      started = true;
+    } catch (err) {
+      console.log('Audio playback failed:', err);
+    }
+  });
+}
