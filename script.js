@@ -75,7 +75,7 @@
       audio.id = 'bgm';
       audio.loop = true;
       // Set your own track URL below (MP3). Left empty by default.
-      // audio.src = 'https://example.com/aurora-theme.mp3';
+      audio.src = 'assets/nature.mp3';
       document.body.appendChild(audio);
     }
 
