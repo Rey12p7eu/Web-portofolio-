@@ -108,6 +108,24 @@
   if(media.matches){ $('#particles')?.remove(); }
 
 })();
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('bgm');
+  const btn = document.getElementById('toggleMusic');
+  if (audio && btn) {
+    const update = () => {
+      btn.textContent = audio.paused ? '🔇 OFF' : '🔊 ON';
+    };
+    btn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+      update();
+    });
+    update();
+  }
+});
 
 
 /* === Theme + Language + Nature Music === */
