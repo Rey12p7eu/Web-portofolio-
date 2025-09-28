@@ -2,26 +2,31 @@
 <html lang="id" class="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Semua Proyek • Raihan Mirzayani</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { darkMode: 'class' };</script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>body{font-family:'MedievalSharp',cursive}</style>
 </head>
-<body class="bg-gradient-to-b from-indigo-900 via-rose-900 to-indigo-950 text-white min-h-screen">
+<body class="min-h-screen cyberpunk bg-gradient-to-b from-indigo-950 via-blue-900 to-indigo-950 text-white dark:text-gray-900">
+  <div class="cyber-grid fixed inset-0 -z-20 pointer-events-none" aria-hidden="true"></div>
+  <div class="scanlines fixed inset-0 -z-20 pointer-events-none" aria-hidden="true"></div>
 
-  <header class="text-center py-12">
+  <header class="max-w-6xl mx-auto px-4 py-10 text-center">
+    <div class="flex items-center justify-between mb-6">
+      <a href="index.html" class="btn-secondary">← Beranda</a>
+      <button id="themeToggle" class="toolbtn" aria-label="Ganti tema"><span id="themeIcon" aria-hidden="true">🌙</span></button>
+    </div>
     <h1 class="text-4xl font-extrabold">🌸 Galeri Proyek</h1>
     <p class="opacity-90 mt-2">Kumpulan karya dan eksperimen pilihan.</p>
-    <a href="index.html" class="btn-secondary inline-block mt-6">← Kembali ke Beranda</a>
   </header>
 
   <main class="max-w-6xl mx-auto px-4 pb-16">
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- card -->
       <article class="project-card">
         <img src="https://i.ibb.co/9PHjNJ0" class="w-full rounded-lg mb-3" alt="Bot WhatsApp">
         <h3 class="text-lg font-bold">Bot WhatsApp — 200+ Fitur</h3>
@@ -51,12 +56,13 @@
           <span class="badge">Prototype</span>
         </div>
       </article>
-      <!-- tambah kartu lain sesuka hati -->
     </div>
   </main>
 
-  <footer class="text-center text-rose-200 text-sm py-8 border-t border-rose-300/40 bg-black/30">
+  <footer class="text-center text-rose-200 dark:text-rose-700 text-sm py-8 border-t border-rose-300/40 bg-black/30 dark:bg-rose-50">
     © 2025 Raihan Mirzayani — Portofolio
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
