@@ -186,7 +186,33 @@ html { scroll-behavior: smooth; }
   border-radius:.9rem;
 }
 
-/* Global neon text highlight */
+/* Readable neon text palette (higher contrast, crisper glow) */
+.cyberpunk { color:#f8fafc; } /* base text near-white */
+.cyberpunk h1,
+.cyberpunk h2,
+.cyberpunk h3 { color:#e0f2fe; } /* headings */
+.cyberpunk h4,
+.cyberpunk h5,
+.cyberpunk h6 { color:#dbeafe; }
+.cyberpunk p,
+.cyberpunk li,
+.cyberpunk span,
+.cyberpunk label,
+.cyberpunk small { color:#f1f5f9; } /* paragraphs and small text */
+
+.cyberpunk a { color:#22d3ee; text-decoration:none; }
+.cyberpunk a:hover { color:#38bdf8; text-decoration:underline; }
+
+.cyberpunk button,
+.cyberpunk .btn-primary,
+.cyberpunk .btn-secondary,
+.cyberpunk .btn-wa,
+.cyberpunk .chip,
+.cyberpunk .badge {
+  color:#0b1220; /* ensure readable on accent backgrounds */
+}
+
+/* Crisper, less-blurry glow to avoid haze */
 .cyberpunk h1,
 .cyberpunk h2,
 .cyberpunk h3,
@@ -198,17 +224,10 @@ html { scroll-behavior: smooth; }
 .cyberpunk li,
 .cyberpunk span,
 .cyberpunk label,
-.cyberpunk small,
-.cyberpunk button,
-.cyberpunk .chip,
-.cyberpunk .badge,
-.cyberpunk .btn-primary,
-.cyberpunk .btn-secondary,
-.cyberpunk .btn-wa {
+.cyberpunk small {
   text-shadow:
-    0 0 6px rgba(59,130,246,.45),   /* blue glow */
-    0 0 12px rgba(34,211,238,.35),  /* cyan glow */
-    0 0 18px rgba(240,171,252,.25); /* magenta glow */
+    0 0 2px rgba(59,130,246,.60),   /* tighter blue glow */
+    0 0 6px rgba(34,211,238,.45);   /* cyan accent */
 }
 
 /* placeholder highlight */
