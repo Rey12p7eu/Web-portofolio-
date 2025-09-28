@@ -2,123 +2,102 @@
 <html lang="id" class="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Raihan Mirzayani • Portofolio Sakura</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raihan Mirzayani • Portofolio</title>
 
-  <!-- Tailwind -->
+  <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { darkMode: 'class' };</script>
 
-  <!-- Icons, font & styles -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Fonts + Icons -->
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- App styles -->
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/favicon.png">
 
-  <!-- Particles -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
-
   <style>
-    :root{
-      /* GANTI URL di sini ke gambar sakura favoritmu */
+    :root {
       --hero-bg: url('https://images.unsplash.com/photo-1526481280698-8fcc0e2937fd?auto=format&fit=crop&w=2060&q=80');
     }
-    body{font-family:'MedievalSharp',cursive}
+    body { font-family:'MedievalSharp',cursive }
   </style>
 </head>
-<body
-  class="bg-gradient-to-b from-indigo-900 via-rose-900 to-indigo-950 text-white dark:bg-white dark:text-black transition-colors duration-300 bg-fixed bg-cover"
-  style="background-image: var(--hero-bg);">
+<body class="bg-fixed bg-cover text-white dark:text-gray-900 transition-colors duration-300" style="background-image: var(--hero-bg);">
 
-  <!-- layers -->
-  <div id="particles-js" class="fixed inset-0 -z-10"></div>
-  <div id="sakura-container" class="pointer-events-none fixed inset-0 -z-10"></div>
+  <!-- Decorative layers with motion-safety -->
+  <div id="particles" class="fixed inset-0 -z-10"></div>
+  <div id="sakura" class="pointer-events-none fixed inset-0 -z-10"></div>
 
-  <!-- music -->
-  <audio id="bg-music" autoplay loop hidden>
-    <source src="https://files.catbox.moe/jmpa8m.mp3" type="audio/mpeg">
-  </audio>
-  <button id="toggleMusic"
-    class="fixed bottom-4 right-4 bg-rose-400 text-black px-4 py-2 rounded-full shadow hover:shadow-lg transition z-50">🔊</button>
+  <!-- Top bar -->
+  <header class="w-full">
+    <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#" class="text-lg font-bold tracking-wide hover:opacity-90">Raihan Mirzayani</a>
 
-  <!-- header -->
-  <header class="text-center py-16 px-4 fade-in relative">
-    <button id="toggleMode"
-      class="absolute top-4 right-4 text-2xl p-2 rounded-full hover:scale-110 transition bg-black/30 dark:bg-white/20 backdrop-blur-sm"
-      aria-label="Toggle Theme">
-      <span id="themeIcon">🌙</span>
-    </button>
+      <div class="flex items-center gap-2">
+        <button id="themeToggle" class="toolbtn" aria-label="Ganti tema"><span id="themeIcon" aria-hidden="true">🌙</span></button>
+        <button id="musicToggle" class="toolbtn" aria-pressed="false" aria-label="Putar musik">🎵</button>
+      </div>
+    </nav>
+  </header>
 
-    <img src="https://files.catbox.moe/wk9dse.jpg" alt="Raihan Mirzayani"
-      class="mx-auto w-36 h-36 rounded-full border-4 border-rose-300 shadow-xl ring-offset-2 ring-4 ring-rose-400
-             animate-[spin_12s_linear_infinite] [animation-play-state:paused] hover:[animation-play-state:running]
-             transition duration-500 ease-in-out" />
+  <!-- Hero -->
+  <section id="home" class="text-center py-14 px-4 fade-in">
+    <img src="https://files.catbox.moe/wk9dse.jpg" alt="Foto profil Raihan Mirzayani"
+         class="mx-auto w-36 h-36 rounded-full border-4 border-rose-300 shadow-xl ring-offset-2 ring-4 ring-rose-400
+                animate-[spin_12s_linear_infinite] [animation-play-state:paused] hover:[animation-play-state:running]
+                transition duration-500 ease-in-out" />
 
     <h1 class="text-4xl sm:text-5xl font-extrabold mt-4 drop-shadow">Raihan Mirzayani</h1>
-    <p class="text-rose-300 dark:text-rose-600 text-xl mt-2">Prompt Engineer & Digital Creator</p>
+    <p class="text-rose-200 dark:text-rose-600 text-xl mt-2">Prompt Engineer & Digital Creator</p>
 
     <p class="max-w-2xl mx-auto text-rose-100/90 dark:text-gray-700 mt-4 leading-relaxed">
-      Saya membangun solusi <span class="font-semibold">AI & automasi</span> yang rapi, cepat, dan relevan—berfokus pada
+      Saya membangun solusi <span class="font-semibold">AI & automasi</span> yang rapi, cepat, dan relevan—fokus pada
       <span class="font-semibold">Prompt Engineering</span>, eksperimen kreatif, dan strategi digital yang berdampak.
     </p>
 
-    <div class="flex justify-center gap-4 mt-6">
-      <a href="https://github.com/Rey12p7eu" target="_blank" class="group">
-        <i class="fab fa-github text-2xl text-rose-200 transition group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_#fb7185] icon-glow"></i>
+    <div class="flex justify-center gap-4 mt-6" aria-label="Sosial">
+      <a href="https://github.com/Rey12p7eu" target="_blank" rel="noopener" class="group" aria-label="GitHub">
+        <i class="fab fa-github text-2xl text-rose-200 transition group-hover:scale-110 icon-glow"></i>
       </a>
-      <a href="https://instagram.com/raihan_m.y" target="_blank" class="group">
-        <i class="fab fa-instagram text-2xl text-rose-200 transition group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_#fb7185] icon-glow"></i>
+      <a href="https://instagram.com/raihan_m.y" target="_blank" rel="noopener" class="group" aria-label="Instagram">
+        <i class="fab fa-instagram text-2xl text-rose-200 transition group-hover:scale-110 icon-glow"></i>
       </a>
-      <a href="mailto:raihanmirzayani@gmail.com" class="group">
-        <i class="fas fa-envelope text-2xl text-rose-200 transition group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_#fb7185] icon-glow"></i>
+      <a href="mailto:raihanmirzayani@gmail.com" class="group" aria-label="Email">
+        <i class="fas fa-envelope text-2xl text-rose-200 transition group-hover:scale-110 icon-glow"></i>
       </a>
-      <a href="https://wa.me/62887449036602" target="_blank" class="group">
-        <i class="fab fa-whatsapp text-2xl text-rose-200 transition group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_#fb7185] icon-glow"></i>
+      <a href="https://wa.me/62887449036602" target="_blank" rel="noopener" class="group" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp text-2xl text-rose-200 transition group-hover:scale-110 icon-glow"></i>
       </a>
     </div>
 
-    <!-- quick stats -->
-    <div class="mt-8 flex flex-wrap justify-center gap-3">
+    <div class="mt-8 flex flex-wrap justify-center gap-3" aria-label="Statistik singkat">
       <span class="chip">2+ th belajar AI</span>
       <span class="chip">200+ fitur bot</span>
       <span class="chip">Fokus: Prompt & Automasi</span>
     </div>
 
-    <!-- link ke halaman proyek terpisah -->
     <div class="mt-6">
       <a href="projects.html" class="btn-primary">🌸 Lihat Halaman Proyek</a>
     </div>
-  </header>
-
-  <!-- tentang -->
-  <section id="tentang" class="max-w-3xl mx-auto px-4 py-12 fade-in">
-    <h2 class="text-3xl font-semibold text-rose-300 dark:text-rose-600 mb-4 border-b-2 border-rose-300/60 pb-2">Tentang Saya</h2>
-
-    <p class="text-rose-100/95 dark:text-gray-700 mt-4 paragraph-to-reveal">
-      Nama saya Raihan Mirzayani, biasa dipanggil Mirza. Saya lahir pada 22 September 2007. Di tengah dunia yang cepat,
-      saya memilih berjalan mantap—agar benar-benar memahami arah yang saya tempuh.
-    </p>
-    <p class="text-rose-100/95 dark:text-gray-700 mt-4 paragraph-to-reveal">
-      Membaca adalah cara saya berdialog dengan dunia. Setiap halaman membuka cakrawala baru, setiap paragraf
-      menajamkan cara saya berpikir dan berkarya.
-    </p>
-    <p class="text-rose-100/95 dark:text-gray-700 mt-4 paragraph-to-reveal">
-      Saya seorang pemula yang serius: belajar bukan sekadar untuk tahu, tapi untuk menguasai—pelan, terukur, konsisten.
-      <span class="font-semibold">Proses adalah kompas saya.</span>
-    </p>
-    <p class="text-rose-100/95 dark:text-gray-700 mt-4 paragraph-to-reveal">
-      Saya tidak takut bermimpi besar. Banyak hal dulu dianggap mustahil—sebelum seseorang membuktikannya. Karena itu,
-      saya membangun kenyataan saya, satu langkah setiap hari.
-    </p>
-    <p class="text-rose-100/95 dark:text-gray-700 mt-4 paragraph-to-reveal">
-      Saya mungkin belum sampai, tetapi saya sedang menuju ke sana—dengan rasa ingin tahu, disiplin, dan kecintaan pada proses.
-    </p>
   </section>
 
-  <!-- tools -->
-  <section class="bg-rose-100/20 dark:bg-rose-50/70 py-12 px-4 fade-in text-white dark:text-black">
+  <!-- Tentang -->
+  <section id="about" class="max-w-3xl mx-auto px-4 py-12 fade-in">
+    <h2 class="section-title">Tentang Saya</h2>
+
+    <p class="reveal">Nama saya Raihan Mirzayani (Mirza). Saya lahir 22 September 2007. Di tengah dunia yang cepat, saya memilih berjalan mantap—agar benar-benar memahami arah yang saya tempuh.</p>
+    <p class="reveal">Membaca adalah cara saya berdialog dengan dunia. Setiap halaman membuka cakrawala baru, setiap paragraf menajamkan cara saya berpikir dan berkarya.</p>
+    <p class="reveal">Saya seorang pemula yang serius: belajar bukan sekadar untuk tahu, tapi untuk menguasai—pelan, terukur, konsisten. <span class="font-semibold">Proses adalah kompas saya.</span></p>
+    <p class="reveal">Saya tidak takut bermimpi besar. Banyak hal dulu dianggap mustahil—sebelum seseorang membuktikannya. Karena itu, saya membangun kenyataan saya, satu langkah setiap hari.</p>
+    <p class="reveal">Saya mungkin belum sampai, tetapi saya sedang menuju ke sana—dengan rasa ingin tahu, disiplin, dan kecintaan pada proses.</p>
+  </section>
+
+  <!-- Tools -->
+  <section class="bg-rose-100/20 dark:bg-rose-50/70 py-12 px-4 fade-in text-white dark:text-gray-900">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-semibold text-rose-300 dark:text-rose-700 mb-6">Peralatan</h2>
+      <h2 class="section-title text-rose-300 dark:text-rose-700">Peralatan</h2>
       <div class="flex flex-wrap gap-3">
         <span class="badge">ChatGPT</span>
         <span class="badge">Notion</span>
@@ -128,9 +107,9 @@
     </div>
   </section>
 
-  <!-- proyek ringkas (tetap ada) -->
-  <section id="proyek" class="max-w-5xl mx-auto px-4 py-12 fade-in">
-    <h2 class="text-3xl font-semibold text-rose-300 dark:text-rose-600 mb-6">Proyek Pilihan</h2>
+  <!-- Proyek -->
+  <section id="projects" class="max-w-5xl mx-auto px-4 py-12 fade-in">
+    <h2 class="section-title">Proyek Pilihan</h2>
 
     <div class="grid md:grid-cols-2 gap-6">
       <article class="project-card">
@@ -153,45 +132,50 @@
     </div>
   </section>
 
-  <!-- kontak baru -->
-  <section id="kontak" class="max-w-3xl mx-auto px-4 py-12 fade-in">
-    <h2 class="text-3xl font-semibold text-rose-300 dark:text-rose-600 mb-4 border-b-2 border-rose-300/60 pb-2">Kontak</h2>
+  <!-- Kontak -->
+  <section id="contact" class="max-w-3xl mx-auto px-4 py-12 fade-in">
+    <h2 class="section-title">Kontak</h2>
 
-    <form action="mailto:raihanmirzayani@gmail.com" method="POST" enctype="text/plain" class="space-y-4">
+    <form action="mailto:raihanmirzayani@gmail.com" method="POST" enctype="text/plain" class="space-y-4" aria-label="Form kontak">
       <div>
-        <label class="block text-sm mb-1">Nama</label>
-        <input type="text" name="name" required class="form-field" placeholder="Nama kamu" />
+        <label class="block text-sm mb-1" for="name">Nama</label>
+        <input id="name" type="text" name="name" required class="form-field" placeholder="Nama kamu" />
       </div>
       <div>
-        <label class="block text-sm mb-1">Email</label>
-        <input type="email" name="email" required class="form-field" placeholder="email@domain.com" />
+        <label class="block text-sm mb-1" for="email">Email</label>
+        <input id="email" type="email" name="email" required class="form-field" placeholder="email@domain.com" />
       </div>
       <div>
-        <label class="block text-sm mb-1">Pesan</label>
-        <textarea name="message" rows="4" required class="form-field" placeholder="Tulis pesan di sini..."></textarea>
+        <label class="block text-sm mb-1" for="message">Pesan</label>
+        <textarea id="message" name="message" rows="4" required class="form-field" placeholder="Tulis pesan di sini..."></textarea>
       </div>
       <div class="flex flex-wrap items-center gap-3">
         <button type="submit" class="btn-primary">Kirim Email ✉️</button>
-        <a class="btn-wa" href="https://wa.me/62887449036602?text=Halo%20Mirza,%20saya%20tertarik%20dengan%20portofolio%20Anda." target="_blank">Chat WhatsApp</a>
+        <a class="btn-wa" href="https://wa.me/62887449036602?text=Halo%20Mirza,%20saya%20tertarik%20dengan%20portofolio%20Anda." target="_blank" rel="noopener">Chat WhatsApp</a>
       </div>
     </form>
   </section>
 
-  <!-- footer -->
-  <footer id="footer" class="text-center text-rose-200 dark:text-rose-700 text-sm py-8 border-t border-rose-300/40 dark:border-rose-300 bg-black/30 dark:bg-rose-50">
-    &copy; 2025 Raihan Mirzayani • Dibangun dengan cinta, disiplin, dan setitik sihir sakura.
+  <!-- Footer -->
+  <footer class="text-center text-rose-200 dark:text-rose-700 text-sm py-8 border-t border-rose-300/40 dark:border-rose-300 bg-black/30 dark:bg-rose-50">
+    © 2025 Raihan Mirzayani • Dibangun dengan cinta, disiplin, dan perhatian pada detail.
   </footer>
 
-  <!-- kompas -->
-  <div class="fixed bottom-6 left-6 flex flex-col gap-3 z-50">
-    <a href="#" title="Beranda" class="compass">🏠</a>
-    <a href="#tentang" title="Tentang Saya" class="compass">📜</a>
-    <a href="#proyek" title="Proyek" class="compass">🧪</a>
+  <!-- Quick nav -->
+  <div class="fixed bottom-6 left-6 flex flex-col gap-3 z-50" aria-label="Navigasi cepat">
+    <a href="#home" title="Beranda" class="compass">🏠</a>
+    <a href="#about" title="Tentang Saya" class="compass">📜</a>
+    <a href="#projects" title="Proyek" class="compass">🧪</a>
     <a href="projects.html" title="Semua Proyek" class="compass">🗂️</a>
-    <a href="#kontak" title="Kontak" class="compass">✉️</a>
+    <a href="#contact" title="Kontak" class="compass">✉️</a>
   </div>
 
-  <!-- scripts -->
+  <!-- Audio (no autoplay) -->
+  <audio id="bgm" preload="none" loop class="hidden">
+    <source src="assets/nature.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
