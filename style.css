@@ -185,3 +185,42 @@ html { scroll-behavior: smooth; }
     0 0 24px rgba(240,171,252,.18);
   border-radius:.9rem;
 }
+
+/* Global neon text highlight */
+.cyberpunk h1,
+.cyberpunk h2,
+.cyberpunk h3,
+.cyberpunk h4,
+.cyberpunk h5,
+.cyberpunk h6,
+.cyberpunk p,
+.cyberpunk a,
+.cyberpunk li,
+.cyberpunk span,
+.cyberpunk label,
+.cyberpunk small,
+.cyberpunk button,
+.cyberpunk .chip,
+.cyberpunk .badge,
+.cyberpunk .btn-primary,
+.cyberpunk .btn-secondary,
+.cyberpunk .btn-wa {
+  text-shadow:
+    0 0 6px rgba(59,130,246,.45),   /* blue glow */
+    0 0 12px rgba(34,211,238,.35),  /* cyan glow */
+    0 0 18px rgba(240,171,252,.25); /* magenta glow */
+}
+
+/* placeholder highlight */
+.form-field::placeholder{
+  color:#64748b; /* slate-500 */
+  text-shadow:
+    0 0 6px rgba(59,130,246,.35),
+    0 0 12px rgba(34,211,238,.28);
+}
+
+/* selection highlight */
+::selection{
+  background: rgba(34,211,238,.28);
+  color:#ffffff;
+}
