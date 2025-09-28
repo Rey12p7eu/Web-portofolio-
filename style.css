@@ -212,7 +212,7 @@ html { scroll-behavior: smooth; }
   color:#0b1220; /* ensure readable on accent backgrounds */
 }
 
-/* Crisper, less-blurry glow to avoid haze */
+/* Crisper, higher-contrast glow for readability */
 .cyberpunk h1,
 .cyberpunk h2,
 .cyberpunk h3,
@@ -226,8 +226,23 @@ html { scroll-behavior: smooth; }
 .cyberpunk label,
 .cyberpunk small {
   text-shadow:
-    0 0 2px rgba(59,130,246,.60),   /* tighter blue glow */
-    0 0 6px rgba(34,211,238,.45);   /* cyan accent */
+    0 0 2px rgba(59,130,246,.85),   /* tighter blue glow, stronger */
+    0 0 8px rgba(34,211,238,.65);   /* cyan accent stronger */
+}
+
+/* Focused glow utilities for hero text */
+.glow-text{
+  color:#f8fafc;
+  text-shadow:
+    0 0 2px rgba(59,130,246,.95),
+    0 0 10px rgba(34,211,238,.75);
+}
+.glow-strong{
+  color:#ffffff;
+  text-shadow:
+    0 0 2px rgba(59,130,246,1),
+    0 0 12px rgba(34,211,238,.85),
+    0 0 18px rgba(240,171,252,.55);
 }
 
 /* placeholder highlight */
