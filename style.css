@@ -171,6 +171,11 @@ html { scroll-behavior: smooth; }
   color:transparent;
   margin-left:.15rem;
 }
+.brand .divider{
+  margin: 0 .35rem;
+  color: #e5e7eb;
+  font-weight: 700;
+}
 .nav-links{
   display:flex; align-items:center; gap:1.25rem;
 }
