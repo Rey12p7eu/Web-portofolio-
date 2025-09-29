@@ -172,7 +172,11 @@ html { scroll-behavior: smooth; }
   margin-left:.15rem;
 }
 .nav-links{
-  display:flex; align-items:center; gap:1.25rem;
+  display:flex; align-items:center; gap:1.5rem;
+  /* beri jarak visual antara brand dan menu */
+  padding-left:.75rem;
+  margin-left:.25rem;
+  border-left:1px solid rgba(147,197,253,.35); /* sky-300 */
 }
 .nav-links a{
   color:#e5e7eb;
