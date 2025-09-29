@@ -19,35 +19,76 @@
     setTheme(next);
   });
 
-  // Music toggle with safe autoplay
+  // Music toggle with visual indicator and smooth fade
   const musicBtn = $('#musicToggle');
   const audio = $('#bgm');
+
+  // simple fade helper
+  function fadeAudio(targetVol, duration = 600) {
+    return new Promise((resolve) => {
+      const startVol = audio.volume;
+      const delta = targetVol - startVol;
+      if (Math.abs(delta) < 0.001 || duration <= 0) {
+        audio.volume = targetVol;
+        resolve();
+        return;
+      }
+      const start = performance.now();
+      function step(t) {
+        const p = Math.min(1, (t - start) / duration);
+        audio.volume = startVol + delta * p;
+        if (p < 1) requestAnimationFrame(step);
+        else resolve();
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
   if (musicBtn && audio) {
     // default comfortable volume
-    audio.volume = 0.6;
+    const DEFAULT_VOL = 0.6;
+    audio.volume = 0.0;
+
+    function setPlayingUI(playing) {
+      musicBtn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+      musicBtn.textContent = playing ? '⏸' : '🎵';
+    }
 
     const saved = localStorage.getItem('music') === 'on';
     if (saved) {
-      audio.play().then(() => {
-        musicBtn.setAttribute('aria-pressed', 'true');
+      audio.play().then(async () => {
+        setPlayingUI(true);
+        await fadeAudio(DEFAULT_VOL, 700);
       }).catch(() => {});
+    } else {
+      // ensure ready to start quickly when user taps
+      if (audio.preload !== 'auto') audio.preload = 'auto';
+      if (audio.readyState === 0) audio.load();
     }
+
     musicBtn.addEventListener('click', async () => {
       const pressed = musicBtn.getAttribute('aria-pressed') === 'true';
       if (pressed) {
-        audio.pause();
-        musicBtn.setAttribute('aria-pressed', 'false');
-        localStorage.setItem('music', 'off');
+        // fade out then pause
+        try {
+          await fadeAudio(0.0, 500);
+        } finally {
+          audio.pause();
+          setPlayingUI(false);
+          localStorage.setItem('music', 'off');
+        }
       } else {
         try {
           if (audio.readyState === 0) audio.load();
+          // start from 0 then fade to default
+          audio.volume = 0.0;
           await audio.play();
-          musicBtn.setAttribute('aria-pressed', 'true');
+          setPlayingUI(true);
           localStorage.setItem('music', 'on');
+          await fadeAudio(DEFAULT_VOL, 700);
         } catch {
-          // hint if blocked
           musicBtn.textContent = '🎵 tap lagi';
-          setTimeout(() => (musicBtn.textContent = '🎵'), 1500);
+          setTimeout(() => setPlayingUI(false), 1500);
         }
       }
     });
@@ -115,5 +156,5 @@
       }
     });
   }, { threshold: 0.12 });
-  $.forEach ? $('.reveal').forEach((el) => io.observe(el)) : null;
+  $('.reveal').forEach((el) => io.observe(el));
 })();
