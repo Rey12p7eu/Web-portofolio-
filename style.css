@@ -178,19 +178,12 @@ html { scroll-behavior: smooth; }
 }
 .nav-links{
   display:flex; align-items:center; gap:1.25rem;
+  border-left: 2px solid rgba(229,231,235,.8); /* full-height separator */
+  padding-left: 1rem;
+  margin-left: .6rem;
 }
-/* vertical separator between brand and nav links */
-.nav-links::before{
-  content:"";
-  display:inline-block;
-  width:1px;
-  height:22px;
-  background: rgba(229,231,235,.7); /* slate-200 */
-  margin-right: .9rem;
-  border-radius: 1px;
-}
-.dark .nav-links::before{
-  background: rgba(59,130,246,.6); /* sky-500 on light mode */
+.dark .nav-links{
+  border-left-color: rgba(59,130,246,.7); /* sky-500 tone */
 }
 
 .nav-links a{
