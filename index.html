@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="dark">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,6 +19,7 @@
 
   <style>
     :root {
+      /* gunakan background utama: background.jpg */
       --hero-bg: url('assets/background.jpg');
     }
     body { font-family:'MedievalSharp',cursive }
@@ -26,22 +27,19 @@
 </head>
 <body class="cyberpunk bg-gradient-to-b from-indigo-950 via-blue-900 to-indigo-950 text-white dark:text-gray-900 transition-colors duration-300">
 
-  <!-- Cyberpunk overlays -->
-  <div class="cyber-grid fixed inset-0 -z-20 pointer-events-none" aria-hidden="true"></div>
-  <div class="scanlines fixed inset-0 -z-20 pointer-events-none" aria-hidden="true"></div>
-
-  <!-- Decorative layers with motion-safety -->
-  <div id="particles" class="fixed inset-0 -z-10"></div>
-  <div id="sakura" class="pointer-events-none fixed inset-0 -z-10"></div>
+  
 
   <!-- Top bar -->
-  <header class="w-full">
-    <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="#" class="text-lg font-bold tracking-wide hover:opacity-90">Raihan Mirzayani</a>
+  <header class="w-full site-header">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="brand">
+        <span>Raihan</span><span class="accent">Mirzayani</span>
+      </a>
 
-      <div class="flex items-center gap-2">
-        <button id="themeToggle" class="toolbtn" aria-label="Ganti tema"><span id="themeIcon" aria-hidden="true">🌙</span></button>
-        <button id="musicToggle" class="toolbtn" aria-pressed="false" aria-label="Putar musik">🎵</button>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
@@ -165,19 +163,9 @@
     © 2025 Raihan Mirzayani • Dibangun dengan cinta, disiplin, dan perhatian pada detail.
   </footer>
 
-  <!-- Quick nav -->
-  <div class="fixed bottom-6 left-6 flex flex-col gap-3 z-50" aria-label="Navigasi cepat">
-    <a href="#home" title="Beranda" class="compass">🏠</a>
-    <a href="#about" title="Tentang Saya" class="compass">📜</a>
-    <a href="#projects" title="Proyek" class="compass">🧪</a>
-    <a href="projects.html" title="Semua Proyek" class="compass">🗂️</a>
-    <a href="#contact" title="Kontak" class="compass">✉️</a>
-  </div>
+  
 
-  <!-- Audio (no autoplay) -->
-  <audio id="bgm" preload="none" loop class="hidden">
-    <source src="assets/nature.mp3" type="audio/mpeg">
-  </audio>
+  
 
   <!-- Scripts -->
   <script src="script.js"></script>

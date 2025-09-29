@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="dark">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,14 +13,21 @@
   <style>body{font-family:'MedievalSharp',cursive}</style>
 </head>
 <body class="min-h-screen cyberpunk bg-gradient-to-b from-indigo-950 via-blue-900 to-indigo-950 text-white dark:text-gray-900">
-  <div class="cyber-grid fixed inset-0 -z-20 pointer-events-none" aria-hidden="true"></div>
-  <div class="scanlines fixed inset-0 -z-20 pointer-events-none" aria-hidden="true"></div>
+  <!-- Consistent compact header -->
+  <header class="w-full site-header">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="brand">
+        <span>Raihan</span><span class="accent">Mirzayani</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
   <header class="max-w-6xl mx-auto px-4 py-10 text-center">
-    <div class="flex items-center justify-between mb-6">
-      <a href="index.html" class="btn-secondary">← Beranda</a>
-      <button id="themeToggle" class="toolbtn" aria-label="Ganti tema"><span id="themeIcon" aria-hidden="true">🌙</span></button>
-    </div>
     <h1 class="text-4xl font-extrabold">🌸 Galeri Proyek</h1>
     <p class="opacity-90 mt-2">Kumpulan karya dan eksperimen pilihan.</p>
   </header>
