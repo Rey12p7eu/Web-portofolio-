@@ -23,6 +23,9 @@
   const musicBtn = $('#musicToggle');
   const audio = $('#bgm');
   if (musicBtn && audio) {
+    // default comfortable volume
+    audio.volume = 0.6;
+
     const saved = localStorage.getItem('music') === 'on';
     if (saved) {
       audio.play().then(() => {
@@ -37,6 +40,7 @@
         localStorage.setItem('music', 'off');
       } else {
         try {
+          if (audio.readyState === 0) audio.load();
           await audio.play();
           musicBtn.setAttribute('aria-pressed', 'true');
           localStorage.setItem('music', 'on');
@@ -111,5 +115,5 @@
       }
     });
   }, { threshold: 0.12 });
-  $('.reveal').forEach((el) => io.observe(el));
+  $.forEach ? $('.reveal').forEach((el) => io.observe(el)) : null;
 })();
