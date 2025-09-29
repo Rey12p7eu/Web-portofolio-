@@ -23,6 +23,7 @@ html { scroll-behavior: smooth; }
   --text-on-accent:#0b1220;
   --neon-cyan:#22d3ee;    /* cyan-400 */
   --neon-magenta:#f0abfc; /* fuchsia-300 */
+  --hero-bg: url('assets/background.jpg'); /* default background image */
 }
 
 /* Buttons + chips + badges */
@@ -158,6 +159,14 @@ html { scroll-behavior: smooth; }
 
 /* Cyberpunk overlays */
 .cyberpunk { position: relative; }
+
+/* Page background image override for both pages */
+body.cyberpunk{
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 .cyber-grid{
   background:
     radial-gradient(ellipse at center, rgba(29,78,216,.25), transparent 60%),
