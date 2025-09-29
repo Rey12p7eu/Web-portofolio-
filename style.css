@@ -149,6 +149,36 @@ html { scroll-behavior: smooth; }
 }
 .dark .section-title{ color:var(--accent-strong); }
 
+/* Compact header navigation */
+.site-header{
+  background: rgba(2,6,23,.75);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(59,130,246,.25);
+}
+.brand{
+  display:inline-flex; align-items:baseline;
+  font-weight:800; letter-spacing:.2px;
+  font-size:1.15rem; /* smaller so sejajar */
+  color:#f8fafc;
+}
+.brand .accent{
+  background: linear-gradient(90deg,#8b5cf6,#22d3ee);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  margin-left:.15rem;
+}
+.nav-links{
+  display:flex; align-items:center; gap:1.25rem;
+}
+.nav-links a{
+  color:#e5e7eb;
+  font-size:1rem;
+  text-decoration:none;
+  transition: color .15s ease, transform .15s ease;
+}
+.nav-links a:hover{ color:#93c5fd; transform: translateY(-1px); }
+
 /* Sakura petals (decorative; disabled if prefers-reduced-motion) */
 .petal{
   position:absolute; width:10px; height:16px;
