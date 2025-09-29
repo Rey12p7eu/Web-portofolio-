@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="dark">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,14 +13,12 @@
   <style>body{font-family:'MedievalSharp',cursive}</style>
 </head>
 <body class="min-h-screen cyberpunk bg-gradient-to-b from-indigo-950 via-blue-900 to-indigo-950 text-white dark:text-gray-900">
-  <div class="cyber-grid fixed inset-0 -z-20 pointer-events-none" aria-hidden="true"></div>
-  <div class="scanlines fixed inset-0 -z-20 pointer-events-none" aria-hidden="true"></div>
+  
 
   <header class="max-w-6xl mx-auto px-4 py-10 text-center">
     <div class="flex items-center justify-between mb-6">
       <a href="index.html" class="btn-secondary">← Beranda</a>
       <div class="flex items-center gap-2">
-        <button id="themeToggle" class="toolbtn" aria-label="Ganti tema"><span id="themeIcon" aria-hidden="true">🌙</span></button>
       </div>
     </div>
     <h1 class="text-4xl font-extrabold">🌸 Galeri Proyek</h1>
@@ -64,14 +62,6 @@
   <footer class="text-center text-rose-200 dark:text-rose-700 text-sm py-8 border-t border-rose-300/40 bg-black/30 dark:bg-rose-50">
     © 2025 Raihan Mirzayani — Portofolio
   </footer>
-
-  <!-- Live region for audio status (accessibility) -->
-  <span id="musicAnnounce" class="sr-only" aria-live="polite"></span>
-
-  <!-- Audio (preload for faster start, still user-initiated) -->
-  <audio id="bgm" preload="auto" loop class="hidden">
-    <source src="assets/nature.mp3" type="audio/mpeg">
-  </audio>
 
   <script src="script.js"></script>
 </body>
