@@ -26,21 +26,20 @@
 </head>
 <body class="cyberpunk bg-gradient-to-b from-indigo-950 via-blue-900 to-indigo-950 text-white dark:text-gray-900 transition-colors duration-300">
 
-  <!-- Cyberpunk overlays -->
-  <div class="cyber-grid fixed inset-0 -z-20 pointer-events-none" aria-hidden="true"></div>
-  <div class="scanlines fixed inset-0 -z-20 pointer-events-none" aria-hidden="true"></div>
-
-  <!-- Decorative layers with motion-safety -->
-  <div id="particles" class="fixed inset-0 -z-10"></div>
-  <div id="sakura" class="pointer-events-none fixed inset-0 -z-10"></div>
+  
 
   <!-- Top bar -->
   <header class="w-full">
     <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
       <a href="#" class="text-lg font-bold tracking-wide hover:opacity-90">Raihan Mirzayani</a>
 
+      <!-- Moved quick nav into header so it doesn't overlap content -->
       <div class="flex items-center gap-2">
-    </  divtton id="themeToggle" class="toolbtn" aria-label="Ganti tema"><span id="themeIcon" aria-hidden="true">🌙</span></button>
+        <a href="#home" title="Beranda" class="compass sm">🏠</a>
+        <a href="#about" title="Tentang Saya" class="compass sm">📜</a>
+        <a href="#projects" title="Proyek" class="compass sm">🧪</a>
+        <a href="projects.html" title="Semua Proyek" class="compass sm">🗂️</a>
+        <a href="#contact" title="Kontak" class="compass sm">✉️</a>
       </div>
     </nav>
   </header>
@@ -164,22 +163,9 @@
     © 2025 Raihan Mirzayani • Dibangun dengan cinta, disiplin, dan perhatian pada detail.
   </footer>
 
-  <!-- Quick nav -->
-  <div class="fixed top-4 right-4 flex flex-row gap-2 z-50" aria-label="Navigasi cepat">
-    <a href="#home" title="Beranda" class="compass sm">🏠</a>
-    <a href="#about" title="Tentang Saya" class="compass sm">📜</a>
-    <a href="#projects" title="Proyek" class="compass sm">🧪</a>
-    <a href="projects.html" title="Semua Proyek" class="compass sm">🗂️</a>
-    <a href="#contact" title="Kontak" class="compass sm">✉️</a>
-  </div>
+  
 
-  <!-- Live region for audio status (accessibility) -->
-  <span id="musicAnnounce" class="sr-only" aria-live="polite"></span>
-
-  <!-- Audio (preload for faster start, still user-initiated) -->
-  <audio id="bgm" preload="auto" loop class="hidden">
-    <source src="assets/nature.mp3" type="audio/mpeg">
-  </audio>
+  
 
   <!-- Scripts -->
   <script src="script.js"></script>
