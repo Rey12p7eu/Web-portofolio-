@@ -2,11 +2,11 @@
 /* Clean, accessible interactions for theme, music, particles and reveal-on-scroll */
 (() => {
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
-  const $ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+  const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
   // Theme toggle (persist)
   const html = document.documentElement;
-  function setTheme(mode) {
+  function setTheme(mode {
     if (mode === 'light') html.classList.remove('dark');
     else html.classList.add('dark');
     localStorage.setItem('theme', mode);
