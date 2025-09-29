@@ -169,7 +169,7 @@ html { scroll-behavior: smooth; }
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
-  margin-left:.15rem;
+  margin-left:.35rem; /* beri spasi agar seimbang antara Raihan dan Mirzayani */
 }
 .brand .divider{
   margin: 0 .35rem;
