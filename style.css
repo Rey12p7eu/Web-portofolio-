@@ -368,3 +368,41 @@ a, button { -webkit-tap-highlight-color: transparent; }
   background: rgba(34,211,238,.28);
   color:#ffffff;
 }
+
+/* Press/hover shape reactions (no color changes) */
+
+/* Primary button press effect */
+.btn-primary:active{
+  transform: translateY(0) scale(.98);
+  box-shadow: 0 4px 12px rgba(96,165,250,.28);
+}
+
+/* Secondary button hover + press */
+.btn-secondary:hover{
+  transform: translateY(-1px);
+}
+.btn-secondary:active{
+  transform: translateY(0) scale(.98);
+}
+
+/* WhatsApp button hover + press */
+.btn-wa:hover{
+  transform: translateY(-1px);
+}
+.btn-wa:active{
+  transform: translateY(0) scale(.98);
+}
+
+/* Chips and badges behave like clickable pills */
+.chip, .badge{ cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
+.chip:hover, .badge:hover{ transform: translateY(-1px); }
+.chip:active, .badge:active{
+  transform: scale(.98);
+  box-shadow: 0 4px 10px rgba(59,130,246,.25);
+}
+
+/* Project cards press effect (if wrapped with link) */
+.project-card:active{
+  transform: translateY(0) scale(.99);
+  box-shadow: 0 6px 14px rgba(59,130,246,.18);
+}
