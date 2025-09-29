@@ -52,6 +52,11 @@
     function setPlayingUI(playing) {
       musicBtn.setAttribute('aria-pressed', playing ? 'true' : 'false');
       musicBtn.textContent = playing ? '⏸' : '🎵';
+      // accessibility helpers
+      musicBtn.title = playing ? 'Musik: ON' : 'Musik: OFF';
+      musicBtn.setAttribute('aria-label', playing ? 'Hentikan musik' : 'Putar musik');
+      const live = document.getElementById('musicAnnounce');
+      if (live) live.textContent = playing ? 'Musik dinyalakan' : 'Musik dimatikan';
     }
 
     const saved = localStorage.getItem('music') === 'on';
