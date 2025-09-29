@@ -24,7 +24,7 @@ html { scroll-behavior: smooth; }
   --text-on-accent:#0b1220;
   --neon-cyan:#7dd3fc;    /* sky-300 */
   --neon-magenta:#a5b4fc; /* indigo-300 (lebih lembut) */
-  --hero-bg: url('assets/bg.jpg'); /* background langit */
+  --hero-bg: url('assets/background.jpg'); /* background langit */
 }
 
 /* Buttons + chips + badges */
